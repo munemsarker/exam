@@ -23,7 +23,7 @@ public class EmployeeManager {
             try {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                                new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String line = reader.readLine();
                 String[] employees = line.split(",");
                 for (String emp : employees) {
@@ -37,7 +37,7 @@ public class EmployeeManager {
             try {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String line = reader.readLine();
                 System.out.println(line);
                 String[] employees = line.split(",");
@@ -51,7 +51,7 @@ public class EmployeeManager {
             System.out.println("Loading data ...");
             try {
                 BufferedWriter writer = new BufferedWriter(
-                        new FileWriter("employees.txt", true));
+                        new FileWriter(Constants.EMPLOYEE_FILE, true));
                 String nameToAdd = args[0].substring(1);
                 writer.write(", " + nameToAdd);
                 writer.close();
@@ -63,7 +63,7 @@ public class EmployeeManager {
             try {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String line = reader.readLine();
                 String[] employees = line.split(",");
                 boolean found = false;
@@ -82,7 +82,7 @@ public class EmployeeManager {
             try {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String line = reader.readLine();
                 char[] characters = line.toCharArray();
                 boolean inWord = false;
@@ -106,7 +106,7 @@ public class EmployeeManager {
             try {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String line = reader.readLine();
                 String[] employees = line.split(",");
                 String nameToUpdate = args[0].substring(1);
@@ -116,7 +116,7 @@ public class EmployeeManager {
                     }
                 }
                 BufferedWriter writer = new BufferedWriter(
-                        new FileWriter("employees.txt"));
+                        new FileWriter(Constants.EMPLOYEE_FILE));
                 writer.write(String.join(",", employees));
                 writer.close();
             } catch (Exception e) {
@@ -127,14 +127,14 @@ public class EmployeeManager {
             try {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String line = reader.readLine();
                 String[] employees = line.split(",");
                 String nameToDelete = args[0].substring(1);
                 List<String> employeeList = new ArrayList<>(Arrays.asList(employees));
                 employeeList.remove(nameToDelete);
                 BufferedWriter writer = new BufferedWriter(
-                new FileWriter("employees.txt"));
+                new FileWriter(Constants.EMPLOYEE_FILE));
                 writer.write(String.join(",", employeeList));
                 writer.close();
             } catch (Exception e) {
