@@ -4,17 +4,17 @@ import java.util.*;
 
 public class EmployeeManager {
     public static void main(String[] args) {
-        // Check arguments
+        // checking the begining args
         if (args.length == 0) {
-            System.out.println("No arguments provided.");
-            System.out.println("please provide following args: ");
-            System.out.println("  to load: l");
-            System.out.println("  to show: s");
-            System.out.println("  to add in the txt file: +Name");
-            System.out.println("  to search in the txt: ?Name");
-            System.out.println("  to count words: c");
-            System.out.println("  to update emp: uName");
-            System.out.println("  to delete emp: dName");
+            System.out.println("No ARGS! Please provide at least one argument!");
+            System.out.println("please follow the options insted");
+            System.out.println("  to load the data: l");
+            System.out.println("  to show the data: s");
+            System.out.println("  to add something in the txt file: +Name");
+            System.out.println("  to search for something in the txt: ?Name");
+            System.out.println("  to count No of words: c");
+            System.out.println("  to update the employee: uName");
+            System.out.println("  to delete he employee: dName");
             return;
         }
 
