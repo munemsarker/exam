@@ -61,14 +61,20 @@ public class EmployeeManager {
                         new InputStreamReader(
                         new FileInputStream(Constants.EMPLOYEE_FILE)));
                 String[] employees = reader.readLine().split(",");
-                boolean found = false;
                 String searchName = args[0].substring(1);
-                for (int i = 0; i < employees.length && !found; i++) {
+
+                int i;
+                for (i = 0; i < employees.length; i++) {
                     if (employees[i].equals(searchName)) {
                         System.out.println("Employee found!");
-                        found = true;
+                        break;
                     }
                 }
+
+                if (i == employees.length) {
+                    System.out.println("Employee not found!");
+                }
+            } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("c")) {
