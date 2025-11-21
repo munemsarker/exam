@@ -29,7 +29,6 @@ public class EmployeeManager {
                 for (String emp : employees) {
                     System.out.println(emp);
                 }
-            } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].equals("s")) {
@@ -44,7 +43,6 @@ public class EmployeeManager {
                 Random random = new Random();
                 int randomIndex = random.nextInt(employees.length);
                 System.out.println(employees[randomIndex]);
-            } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("+")) {
@@ -74,7 +72,6 @@ public class EmployeeManager {
                         found = true;
                     }
                 }
-            } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("c")) {
@@ -98,7 +95,6 @@ public class EmployeeManager {
                     }
                 }
                 System.out.println(count + " word(s) found " + characters.length);
-            } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("u")) {
@@ -140,6 +136,29 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Deleted.");
+        }
+    }
+
+    private static String readEmployeesLine() {
+        try {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream("employees.txt")));
+            String line = reader.readLine();
+            reader.close();
+            return line;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private static void writeEmployeesData(String data, boolean append) {
+        try {
+            BufferedWriter writer = new BufferedWriter(
+                    new FileWriter("employees.txt", append));
+            writer.write(data);
+            writer.close();
+        } catch (Exception e) {
         }
     }
 }
