@@ -24,8 +24,7 @@ public class EmployeeManager {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
                                 new FileInputStream(Constants.EMPLOYEE_FILE)));
-                String line = reader.readLine();
-                String[] employees = line.split(",");
+                String[] employees = reader.readLine().split(",");
                 for (String emp : employees) {
                     System.out.println(emp);
                 }
@@ -50,8 +49,7 @@ public class EmployeeManager {
             try {
                 BufferedWriter writer = new BufferedWriter(
                         new FileWriter(Constants.EMPLOYEE_FILE, true));
-                String nameToAdd = args[0].substring(1);
-                writer.write(", " + nameToAdd);
+                writer.write(", " + args[0].substring(1));
                 writer.close();
             } catch (Exception e) {
             }
@@ -62,8 +60,7 @@ public class EmployeeManager {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
                         new FileInputStream(Constants.EMPLOYEE_FILE)));
-                String line = reader.readLine();
-                String[] employees = line.split(",");
+                String[] employees = reader.readLine().split(",");
                 boolean found = false;
                 String searchName = args[0].substring(1);
                 for (int i = 0; i < employees.length && !found; i++) {
@@ -80,8 +77,7 @@ public class EmployeeManager {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
                         new FileInputStream(Constants.EMPLOYEE_FILE)));
-                String line = reader.readLine();
-                char[] characters = line.toCharArray();
+                char[] characters = reader.readLine().toCharArray();
                 boolean inWord = false;
                 int count = 0;
                 for (char ch : characters) {
@@ -103,8 +99,7 @@ public class EmployeeManager {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
                         new FileInputStream(Constants.EMPLOYEE_FILE)));
-                String line = reader.readLine();
-                String[] employees = line.split(",");
+                String[] employees = reader.readLine().split(",");
                 String nameToUpdate = args[0].substring(1);
                 for (int i = 0; i < employees.length; i++) {
                     if (employees[i].equals(nameToUpdate)) {
@@ -124,8 +119,7 @@ public class EmployeeManager {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
                         new FileInputStream(Constants.EMPLOYEE_FILE)));
-                String line = reader.readLine();
-                String[] employees = line.split(",");
+                String[] employees = reader.readLine().split(",");
                 String nameToDelete = args[0].substring(1);
                 List<String> employeeList = new ArrayList<>(Arrays.asList(employees));
                 employeeList.remove(nameToDelete);
