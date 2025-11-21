@@ -85,20 +85,15 @@ public class EmployeeManager {
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(
                         new FileInputStream(Constants.EMPLOYEE_FILE)));
-                char[] characters = reader.readLine().toCharArray();
-                boolean inWord = false;
+                String line = reader.readLine();
                 int count = 0;
-                for (char ch : characters) {
-                    if (ch == ' ') {
-                        if (!inWord) {
-                            count++;
-                            inWord = true;
-                        } else {
-                            inWord = false;
-                        }
-                    }
+
+                if (line != null && !line.isEmpty()) {
+                    String[] words = line.trim().split("\\s+");
+                    count = words.length;
                 }
-                System.out.println(count + " word(s) found " + characters.length);
+
+                System.out.println(count + " word(s) found " + line.length());
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
