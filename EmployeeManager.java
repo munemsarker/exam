@@ -18,6 +18,8 @@ public class EmployeeManager {
             return;
         }
 
+        // load operations based on the given args.
+
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
             try {
@@ -30,6 +32,7 @@ public class EmployeeManager {
                 }
             }
             System.out.println("Data Loaded.");
+            // show operation
         } else if (args[0].equals("s")) {
             System.out.println("Loading data ...");
             try {
@@ -44,6 +47,7 @@ public class EmployeeManager {
                 System.out.println(employees[randomIndex]);
             }
             System.out.println("Data Loaded.");
+            //add operation
         } else if (args[0].contains("+")) {
             System.out.println("Loading data ...");
             try {
@@ -54,6 +58,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
+            //search operation
         } else if (args[0].contains("?")) {
             System.out.println("Loading data ...");
             try {
@@ -77,6 +82,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
+            //count number of words operation in herer
         } else if (args[0].contains("c")) {
             System.out.println("Loading data ...");
             try {
@@ -95,6 +101,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
+            //update employee details here
         } else if (args[0].contains("u")) {
             System.out.println("Loading data ...");
             try {
@@ -115,6 +122,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Updated.");
+            // delete employee operation
         } else if (args[0].contains("d")) {
             System.out.println("Loading data ...");
             try {
@@ -133,6 +141,7 @@ public class EmployeeManager {
             }
             System.out.println("Data Deleted.");
         } else {
+            //invalid argument handler operation.
             System.out.println("Invalid ARG! Please provide a valid argument sir!");
         }
     }
