@@ -132,6 +132,8 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Deleted.");
+        } else {
+            System.out.println("Invalid ARG! Please provide a valid argument sir!");
         }
     }
 
